@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Privacy-first QR Code Generator. Runs entirely in your browser with no server required. Customize, embed logos, and export high-quality QR codes." />
+    <title>QR Code Gen – Free Privacy-First QR Code Generator</title>
+    
+    <!-- SEO & Identity -->
+    <meta name="author" content="QR Code Gen" />
+    <meta name="keywords" content="QR code generator, free qr code, privacy first qr, no tracking qr, url qr code, wifi qr code, vcard qr code" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://chrisjdj.github.io/QR-Code-Gen/" />
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chrisjdj.github.io/QR-Code-Gen/" />
+    <meta property="og:title" content="QR Code Gen – Free Privacy-First QR Code Generator" />
+    <meta property="og:description" content="A powerful, serverless QR code generator that runs entirely in your browser. Generate URL, text, email, phone, location, and WiFi QR codes with custom logos and designs." />
+    <meta property="og:image" content="https://chrisjdj.github.io/QR-Code-Gen/og-image.png" />
+    <meta property="og:site_name" content="QR Code Gen" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://chrisjdj.github.io/QR-Code-Gen/" />
+    <meta name="twitter:title" content="QR Code Gen – Free Privacy-First QR Code Generator" />
+    <meta name="twitter:description" content="A powerful, serverless QR code generator that runs entirely in your browser. Generate URL, text, email, phone, location, and WiFi QR codes with custom designs." />
+    <meta name="twitter:image" content="https://chrisjdj.github.io/QR-Code-Gen/og-image.png" />
+    
+    <!-- JSON-LD Structured Data for Apps -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "QR Code Gen",
+      "url": "https://chrisjdj.github.io/QR-Code-Gen/",
+      "description": "Privacy-first QR code generator running entirely in your browser.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="theme-color" content="#0f0f1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <script type="module" crossorigin src="/web-tools/QR-Code-Gen/assets/index-DfmHso_u.js"></script>
+    <link rel="stylesheet" crossorigin href="/web-tools/QR-Code-Gen/assets/index-BZG_Oqml.css">
+  </head>
+  <body class="light-mode">
+    <div id="app">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-brand">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+              <rect x="2" y="2" width="8" height="8" rx="1.5" fill="currentColor"/>
+              <rect x="14" y="2" width="8" height="8" rx="1.5" fill="currentColor"/>
+              <rect x="2" y="14" width="8" height="8" rx="1.5" fill="currentColor"/>
+              <rect x="14" y="14" width="4" height="4" rx="0.5" fill="currentColor" opacity="0.6"/>
+              <rect x="20" y="14" width="2" height="2" rx="0.3" fill="currentColor" opacity="0.6"/>
+              <rect x="14" y="20" width="2" height="2" rx="0.3" fill="currentColor" opacity="0.6"/>
+              <rect x="18" y="18" width="4" height="4" rx="0.5" fill="currentColor" opacity="0.6"/>
+            </svg>
+          </div>
+          <h1 class="brand-name" style="margin: 0; font-size: inherit; font-weight: inherit; line-height: inherit;">QR Code Gen</h1>
+          <span class="brand-badge">Privacy-First</span>
+        </div>
+        <div class="header-meta">
+          <span class="privacy-badge">
+            <svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 1L2 3.5v4C2 11 4.7 14 8 15c3.3-1 6-4 6-7.5v-4L8 1z"/></svg>
+            No server · No tracking
+          </span>
+        </div>
+      </header>
+
+      <!-- Main Layout -->
+      <main class="app-main">
+
+        <!-- Left Panel: Controls -->
+        <aside class="control-panel" id="controlPanel">
+
+          <!-- QR Type Selector -->
+          <section class="panel-section" id="typeSelectorSection">
+            <h2 class="section-label">QR Type</h2>
+            <div class="type-grid" id="typeGrid">
+              <button class="type-btn active" data-type="url" id="type-url" aria-label="URL QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/></svg>
+                URL
+              </button>
+              <button class="type-btn" data-type="text" id="type-text" aria-label="Text QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6zM8 8a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm0 4a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                Text
+              </button>
+              <button class="type-btn" data-type="email" id="type-email" aria-label="Email QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                Email
+              </button>
+              <button class="type-btn" data-type="phone" id="type-phone" aria-label="Phone QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                Phone
+              </button>
+              <button class="type-btn" data-type="sms" id="type-sms" aria-label="SMS QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/></svg>
+                SMS
+              </button>
+              <button class="type-btn" data-type="whatsapp" id="type-whatsapp" aria-label="WhatsApp QR Code">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.934 1.399 5.61L0 24l6.545-1.371A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.784 9.784 0 01-5.001-1.371l-.359-.214-3.732.981.998-3.648-.233-.374A9.786 9.786 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                WhatsApp
+              </button>
+              <button class="type-btn" data-type="wifi" id="type-wifi" aria-label="WiFi QR Code">
+                <svg viewBox="0 0 469.333 469.333" fill="currentColor" width="18" height="18"><path d="M170.667,336.6l64,64l64-64C263.36,301.293,205.973,301.293,170.667,336.6z"/><path d="M85.333,251.267L128,293.933c58.88-58.88,154.453-58.88,213.333,0L384,251.267 C301.547,168.813,167.787,168.813,85.333,251.267z"/><path d="M0,165.933L42.667,208.6c106.027-106.027,277.973-106.027,384,0l42.667-42.667C339.733,36.333,129.6,36.333,0,165.933z"/></svg>
+                WiFi
+              </button>
+              <button class="type-btn" data-type="vcard" id="type-vcard" aria-label="vCard QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+                vCard
+              </button>
+              <button class="type-btn" data-type="location" id="type-location" aria-label="Location QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                Location
+              </button>
+              <button class="type-btn" data-type="calendar" id="type-calendar" aria-label="Calendar Event QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                Calendar
+              </button>
+              <button class="type-btn" data-type="crypto" id="type-crypto" aria-label="Crypto QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg>
+                Crypto
+              </button>
+              <button class="type-btn" data-type="raw" id="type-raw" aria-label="Raw Payload QR Code">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                Raw
+              </button>
+            </div>
+          </section>
+
+          <!-- Dynamic Input Form -->
+          <section class="panel-section" id="inputSection">
+            <h2 class="section-label">Content</h2>
+            <div id="dynamicForm" class="dynamic-form"></div>
+          </section>
+
+          <!-- Export Panel (Moved to Sidebar) -->
+          <section class="panel-section" id="exportSection">
+            <h2 class="section-label">Export</h2>
+            <div class="section-content">
+              <div class="export-row">
+                <div class="control-group">
+                  <label class="control-label" for="exportSize">Export Size</label>
+                  <select id="exportSize" class="control-select" aria-label="Export size">
+                    <option value="512">512 × 512</option>
+                    <option value="1024" selected>1024 × 1024</option>
+                    <option value="2048">2048 × 2048</option>
+                    <option value="custom">Custom...</option>
+                  </select>
+                  <div id="customSizeInputs" class="hidden custom-size-inputs">
+                    <input type="number" id="customWidth" class="control-input" value="1200" min="100" max="5000" aria-label="Custom export width" placeholder="W" />
+                    <span>×</span>
+                    <input type="number" id="customHeight" class="control-input" value="1200" min="100" max="5000" aria-label="Custom export height" placeholder="H" />
+                  </div>
+                </div>
+
+                <div class="control-group dpi-group">
+                  <label class="control-label" for="exportDpi">DPI</label>
+                  <select id="exportDpi" class="control-select" aria-label="Export DPI">
+                    <option value="72">72 dpi</option>
+                    <option value="96">96 dpi</option>
+                    <option value="150">150 dpi</option>
+                    <option value="300" selected>300 dpi</option>
+                    <option value="600">600 dpi</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="export-buttons" role="group" aria-label="Export options">
+                <button class="export-btn format-png" id="exportPng" aria-label="Download PNG">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  PNG
+                </button>
+                <button class="export-btn format-svg" id="exportSvg" aria-label="Download SVG">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  SVG
+                </button>
+                <button class="export-btn format-jpg" id="exportJpg" aria-label="Download JPG">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  JPG
+                </button>
+                <button class="export-btn format-webp" id="exportWebp" aria-label="Download WebP">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  WebP
+                </button>
+                <button class="export-btn format-pdf" id="exportPdf" aria-label="Download PDF">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  PDF
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Customization: Design -->
+          <section class="panel-section collapsible" id="designSection">
+            <button class="section-toggle" aria-expanded="true" aria-controls="designContent">
+              <h2 class="section-label">Design</h2>
+              <svg class="toggle-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="section-content" id="designContent">
+
+              <!-- Dot Style -->
+              <div class="control-group">
+                <label class="control-label" for="dotStyle">Module Style</label>
+                <div class="style-grid" id="dotStyleGrid" role="radiogroup" aria-label="Module style">
+                  <button class="style-btn active" data-dot="square" id="dot-square" aria-pressed="true">■ Square</button>
+                  <button class="style-btn" data-dot="rounded" id="dot-rounded" aria-pressed="false">◼ Rounded</button>
+                  <button class="style-btn" data-dot="dots" id="dot-dots" aria-pressed="false">● Dots</button>
+                  <button class="style-btn" data-dot="extra-rounded" id="dot-extra" aria-pressed="false">◉ Extra Round</button>
+                  <button class="style-btn" data-dot="classy" id="dot-classy" aria-pressed="false">◈ Classy</button>
+                  <button class="style-btn" data-dot="classy-rounded" id="dot-diamond" aria-pressed="false">◆ Diamond</button>
+                </div>
+              </div>
+
+              <!-- Eye Style -->
+              <div class="control-group">
+                <label class="control-label">Eye Style</label>
+                <div class="style-grid" id="eyeStyleGrid" role="radiogroup" aria-label="Eye style">
+                  <button class="style-btn active" data-eye="square" id="eye-square" aria-pressed="true">□ Square</button>
+                  <button class="style-btn" data-eye="extra-rounded" id="eye-rounded" aria-pressed="false">◯ Rounded</button>
+                  <button class="style-btn" data-eye="dot" id="eye-dot" aria-pressed="false">● Circular</button>
+                </div>
+              </div>
+
+              <!-- QR Settings -->
+              <div class="control-row">
+                <div class="control-group">
+                  <label class="control-label" for="qrVersion">QR Version</label>
+                  <select id="qrVersion" class="control-select" aria-label="QR Version">
+                    <option value="0">Auto</option>
+                    <!-- populated by JS -->
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="ecLevel">Error Correction</label>
+                  <select id="ecLevel" class="control-select" aria-label="Error Correction Level">
+                    <option value="L">L – 7%</option>
+                    <option value="M" selected>M – 15%</option>
+                    <option value="Q">Q – 25%</option>
+                    <option value="H">H – 30%</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Customization: Colors -->
+          <section class="panel-section collapsible" id="colorSection">
+            <button class="section-toggle" aria-expanded="true" aria-controls="colorContent">
+              <h2 class="section-label">Colors</h2>
+              <svg class="toggle-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="section-content" id="colorContent">
+              <div class="control-row-labels">
+                <span class="control-label">Foreground</span>
+                <span class="control-label">Background</span>
+              </div>
+              <div class="control-row">
+                <div class="color-input-pair">
+                  <input type="color" id="fgColor" class="color-swatch" value="#000000" aria-label="Foreground color" />
+                  <input type="text" id="fgColorText" class="color-text" value="#000000" maxlength="7" aria-label="Foreground hex color" />
+                </div>
+                <div class="color-input-pair">
+                  <input type="color" id="bgColor" class="color-swatch" value="#ffffff" aria-label="Background color" />
+                  <input type="text" id="bgColorText" class="color-text" value="#ffffff" maxlength="7" aria-label="Background hex color" />
+                </div>
+              </div>
+
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="transparentBg" aria-label="Transparent background" />
+                  <span class="checkbox-custom"></span>
+                  Transparent Background
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" id="enableGradient" aria-label="Enable gradient" />
+                  <span class="checkbox-custom"></span>
+                  Enable Gradient
+                </label>
+              </div>
+
+              <!-- Gradient -->
+              <div id="gradientControls" class="gradient-controls hidden">
+                <div class="control-row">
+                  <div class="control-group">
+                    <label class="control-label" for="gradientType">Type</label>
+                    <select id="gradientType" class="control-select" aria-label="Gradient type">
+                      <option value="linear">Linear</option>
+                      <option value="radial">Radial</option>
+                    </select>
+                  </div>
+                  <div class="control-group" id="gradientAngleGroup">
+                    <label class="control-label" for="gradientAngle">Angle: <span id="gradientAngleVal">0</span>°</label>
+                    <input type="range" id="gradientAngle" class="control-range" min="0" max="360" value="0" aria-label="Gradient angle" />
+                  </div>
+                </div>
+                <div class="control-row">
+                  <div class="control-group">
+                    <label class="control-label" for="gradientColor1">Color 1</label>
+                    <div class="color-input-wrap">
+                      <input type="color" id="gradientColor1" class="color-swatch" value="#6366f1" aria-label="Gradient color 1" />
+                      <input type="text" id="gradientColor1Text" class="color-text" value="#6366f1" maxlength="7" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="gradientColor2">Color 2</label>
+                    <div class="color-input-wrap">
+                      <input type="color" id="gradientColor2" class="color-swatch" value="#a855f7" aria-label="Gradient color 2" />
+                      <input type="text" id="gradientColor2Text" class="color-text" value="#a855f7" maxlength="7" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Logo Section -->
+          <section class="panel-section collapsible" id="logoSection">
+            <button class="section-toggle" aria-expanded="true" aria-controls="logoContent">
+              <h2 class="section-label">Logo / Image</h2>
+              <svg class="toggle-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="section-content" id="logoContent">
+              <div class="drop-zone" id="logoDropZone" tabindex="0" role="button" aria-label="Upload logo image. Click or drag and drop.">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                <p>Drop image or <span class="link-text">browse</span></p>
+                <p class="drop-sub">PNG, JPG, SVG supported</p>
+                <input type="file" id="logoInput" accept="image/*,.svg" class="file-input-hidden" aria-label="Logo file upload" />
+              </div>
+              <div id="logoPreviewWrap" class="logo-preview-wrap hidden">
+                <img id="logoPreviewImg" src="" alt="Logo preview" class="logo-preview-img" />
+                <button id="removeLogo" class="btn-icon remove-logo" aria-label="Remove logo">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                </button>
+              </div>
+              <div id="logoControls" class="logo-controls hidden">
+                <div class="control-group">
+                  <label class="control-label" for="logoSize">Logo Size: <span id="logoSizeVal">30</span>%</label>
+                  <input type="range" id="logoSize" class="control-range" min="10" max="50" value="30" aria-label="Logo size percentage" />
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="logoMargin">Logo Margin: <span id="logoMarginVal">5</span>px</label>
+                  <input type="range" id="logoMargin" class="control-range" min="0" max="20" value="5" aria-label="Logo margin" />
+                </div>
+                <label class="checkbox-label">
+                  <input type="checkbox" id="logoRounded" checked aria-label="Rounded logo background" />
+                  <span class="checkbox-custom"></span>
+                  Rounded Background
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" id="logoShadow" aria-label="Logo drop shadow" />
+                  <span class="checkbox-custom"></span>
+                  Drop Shadow
+                </label>
+                <div class="control-group">
+                  <label class="control-label" for="logoBgColor">Logo Background</label>
+                  <div class="color-input-wrap">
+                    <input type="color" id="logoBgColor" class="color-swatch" value="#ffffff" aria-label="Logo background color" />
+                    <input type="text" id="logoBgColorText" class="color-text" value="#ffffff" maxlength="7" />
+                  </div>
+                </div>
+              </div>
+              <div id="logoWarning" class="warning-banner hidden" role="alert">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                <span>Logo detected – Error correction auto-upgraded to <strong>H</strong> for reliability.</span>
+              </div>
+            </div>
+          </section>
+
+
+        </aside>
+
+        <!-- Right Panel: Preview & Export -->
+        <section class="preview-panel" id="previewPanel" aria-label="QR Code Preview">
+
+          <!-- Scan Mode Toggles -->
+          <div class="scan-mode-bar">
+            <button class="scan-mode-btn active" id="lightMode" aria-pressed="true" aria-label="Light mode preview">☀ Light</button>
+            <button class="scan-mode-btn" id="darkMode" aria-pressed="false" aria-label="Dark mode preview">☾ Dark</button>
+          </div>
+
+          <!-- QR Preview -->
+          <div class="preview-container" id="previewContainer">
+            <div class="preview-frame" id="previewFrame">
+              <div id="qrCanvas" aria-label="QR Code preview"></div>
+              <div class="preview-placeholder" id="previewPlaceholder">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80" opacity="0.2">
+                  <rect x="5" y="5" width="35" height="35" rx="4" fill="currentColor"/>
+                  <rect x="60" y="5" width="35" height="35" rx="4" fill="currentColor"/>
+                  <rect x="5" y="60" width="35" height="35" rx="4" fill="currentColor"/>
+                  <rect x="12" y="12" width="21" height="21" rx="2" fill="#0f0f1a"/>
+                  <rect x="67" y="12" width="21" height="21" rx="2" fill="#0f0f1a"/>
+                  <rect x="12" y="67" width="21" height="21" rx="2" fill="#0f0f1a"/>
+                  <rect x="18" y="18" width="9" height="9" rx="1" fill="currentColor"/>
+                  <rect x="73" y="18" width="9" height="9" rx="1" fill="currentColor"/>
+                  <rect x="18" y="73" width="9" height="9" rx="1" fill="currentColor"/>
+                  <rect x="60" y="60" width="12" height="12" rx="2" fill="currentColor" opacity="0.5"/>
+                  <rect x="76" y="60" width="12" height="12" rx="2" fill="currentColor" opacity="0.5"/>
+                  <rect x="60" y="76" width="12" height="12" rx="2" fill="currentColor" opacity="0.5"/>
+                  <rect x="76" y="76" width="12" height="12" rx="2" fill="currentColor" opacity="0.5"/>
+                </svg>
+                <p>Enter content to generate QR code</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alerts -->
+          <div id="alertArea" class="alert-area" role="status" aria-live="polite"></div>
+
+        </section>
+      </main>
+    </div>
+
+    <!-- SEO Footer & Noscript Fallback -->
+    <footer class="seo-footer">
+      <noscript>
+        <div class="noscript-banner">
+          <p><strong>Note:</strong> QR Code Gen requires JavaScript to generate QR codes securely in your browser without sending data to a server. Please enable JavaScript to use the generator tool.</p>
+        </div>
+      </noscript>
+      
+      <div class="footer-container">
+        <h2>About QR Code Gen</h2>
+        <p>QR Code Gen is a free, privacy-first QR code generator designed for modern web browsers. Unlike traditional generators, all QR code creation happens entirely on your device. We do not use servers to process your data, ensuring complete privacy and security for your URLs, vCards, WiFi passwords, and other sensitive information.</p>
+        
+        <h3>Features</h3>
+        <ul>
+          <li><strong>100% Client-Side Processing</strong> - No tracking, no analytics, no server storage.</li>
+          <li><strong>Extensive Customization</strong> - Adjust colors, gradients, dot styles, and error correction levels.</li>
+          <li><strong>High-Quality Exports</strong> - Download in PNG, SVG, JPG, WebP, or PDF formats up to 4K resolution.</li>
+          <li><strong>Multiple Formats</strong> - Generate QR codes for URLs, Text, Email, Phone, SMS, WhatsApp, WiFi, vCard, Location, Calendar Events, and Crypto addresses.</li>
+          <li><strong>Logo Embedding</strong> - Add your own branding perfectly to the center.</li>
+        </ul>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2026 QR Code Gen. Open source and privacy-respecting.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
