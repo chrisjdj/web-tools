@@ -1,8 +1,8 @@
 const CACHE_NAME = 'turboimage-cache-v1';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json'
+  './',
+  './index.html',
+  './manifest.json'
   // Vite hashes assets so we will implement a catch-all strategy
 ];
 
