@@ -25,6 +25,9 @@ Lightning-fast image optimization and processing workflow. Compress, convert, an
 ### [QR Generator](https://chrisjdj.github.io/web-tools/QR-Code-Gen/)
 Generate precise, customizable QR codes in milliseconds. Tailored for URLs, text, and contact information.
 
+### [Privacy Inspector](https://chrisjdj.github.io/web-tools/browser-privacy-inspector/)
+Discover your browser's full fingerprint — GPU, fonts, canvas hash, WebRTC leaks, and more. 100% client-side.
+
 ---
 
 ## 💡 Suggest the Next App!

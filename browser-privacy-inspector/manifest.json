@@ -1,0 +1,18 @@
+{
+  "name": "Browser Privacy Inspector",
+  "short_name": "Privacy Inspector",
+  "description": "Reveal exactly what websites can see about your browser — fingerprints, tracking vectors, hardware, permissions, and more. 100% client-side.",
+  "start_url": "/web-tools/browser-privacy-inspector/",
+  "scope": "/web-tools/browser-privacy-inspector/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/web-tools/browser-privacy-inspector/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
