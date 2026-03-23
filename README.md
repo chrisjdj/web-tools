@@ -28,8 +28,10 @@ Generate precise, customizable QR codes in milliseconds. Tailored for URLs, text
 ### [PDF Toolkit](https://chrisjdj.github.io/web-tools/PDF-Toolkit/)
 Comprehensive PDF management. Merge multiple files, split pages, and rotate documents with instant client-side processing.
 
+<!-- 
 ### [Privacy Inspector](https://chrisjdj.github.io/web-tools/browser-privacy-inspector/)
 Discover your browser's full fingerprint — GPU, fonts, canvas hash, WebRTC leaks, and more. 100% client-side.
+-->
 
 ---
 
