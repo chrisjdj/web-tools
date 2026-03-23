@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chrisjdj.github.io/web-tools/PDF-Toolkit/sitemap.xml
