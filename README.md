@@ -14,24 +14,45 @@ A beautifully curated suite of high-performance utilities designed for modern wo
 - **Privacy First**: Your data remains yours. We don't track or store your usage.
 - **Zero Ads**: A clean, distraction-free environment.
 - **Lightning Fast**: Built for speed and efficiency.
+- **Light & Dark Theme**: Follows your system setting by default. Pick System, Light or Dark in the header; the choice is shared by every tool in the collection.
+- **Works Everywhere**: Responsive, accessible layouts (WCAG 2.2 AA) from small phones to wide desktops.
 
 ---
 
 ## 🧰 Tools Included
 
-### [Turbo Image](https://chrisjdj.github.io/web-tools/Turbo-Image/)
+### [Turbo Image](https://chrisjdj.github.io/Turbo-Image/)
 Lightning-fast image optimization and processing workflow. Compress, convert, and prepare assets instantly.
 
-### [QR Generator](https://chrisjdj.github.io/web-tools/QR-Code-Gen/)
+### [QR Generator](https://chrisjdj.github.io/QR-Code-Gen/)
 Generate precise, customizable QR codes in milliseconds. Tailored for URLs, text, and contact information.
 
-### [PDF Toolkit](https://chrisjdj.github.io/web-tools/PDF-Toolkit/)
+### [PDF Toolkit](https://chrisjdj.github.io/PDF-Toolkit/)
 Comprehensive PDF management. Merge multiple files, split pages, and rotate documents with instant client-side processing.
 
 <!-- 
 ### [Privacy Inspector](https://chrisjdj.github.io/web-tools/browser-privacy-inspector/)
 Discover your browser's full fingerprint — GPU, fonts, canvas hash, WebRTC leaks, and more. 100% client-side.
 -->
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/dark-desktop.png" />
+  <img alt="Web Tools Collection hub with cards for Turbo Image, QR Generator and PDF Toolkit" src="docs/screenshots/light-desktop.png" width="1280" />
+</picture>
+
+Each tool is its own repository and is deployed to its own GitHub Pages site. The folders `Turbo-Image/`, `QR-Code-Gen/`, `PDF-Toolkit/` and `browser-privacy-inspector/` in this repo are older build copies kept so existing links keep working; the hub links to the standalone sites.
+
+---
+
+## 🛠️ Editing the hub
+
+The page is static (`index.html`, `styles.css`, `theme.js`) with no build step. Styles are written in SCSS under `styles/` using the design system shared with the tools (tokens, theme, base, components, shell; see the `DESIGN.md` in any tool repo). After changing a `.scss` file, recompile:
+
+```bash
+npx sass --no-source-map --style=compressed styles/main.scss styles.css
+```
+
+The theme preference (`theme-preference` in localStorage: `system`, `light` or `dark`) is applied before first paint by the inline script in `index.html`; `theme.js` wires up the switch.
 
 ---
 

@@ -1,0 +1,176 @@
+// =============================================================================
+// Hub landing page. Each tool card carries its app's accent so the hub previews
+// the suite. Card accents use the same light/dark values as the apps' _accent.scss.
+// =============================================================================
+@use 'tokens' as t;
+
+@mixin card-accents-light {
+  --tool-turbo: #0f766e;
+  --tool-turbo-bg: #f0fdfa;
+  --tool-qr: #4f46e5;
+  --tool-qr-bg: #eef2ff;
+  --tool-pdf: #e11d48;
+  --tool-pdf-bg: #fff1f2;
+}
+
+@mixin card-accents-dark {
+  --tool-turbo: #2dd4bf;
+  --tool-turbo-bg: rgb(45 212 191 / 0.12);
+  --tool-qr: #818cf8;
+  --tool-qr-bg: rgb(129 140 248 / 0.14);
+  --tool-pdf: #fb7185;
+  --tool-pdf-bg: rgb(251 113 133 / 0.12);
+}
+
+:root {
+  @include card-accents-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include card-accents-dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  @include card-accents-dark;
+}
+
+// ---- Hero ------------------------------------------------------------------------
+.hero {
+  padding-block: var(--space-10) var(--space-8);
+  text-align: center;
+
+  @include t.up(md) {
+    padding-block: var(--space-12) var(--space-10);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    margin: var(--space-3) auto 0;
+    max-width: 56ch;
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+    margin: var(--space-6) auto 0;
+    padding: 0;
+    list-style: none;
+    max-width: 640px;
+  }
+}
+
+// ---- Tool cards ----------------------------------------------------------------
+.tool-grid {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+
+  @include t.up(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+.tool-card {
+  --tool: var(--accent);
+  --tool-bg: var(--accent-subtle-bg);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-6);
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+
+  &--turbo {
+    --tool: var(--tool-turbo);
+    --tool-bg: var(--tool-turbo-bg);
+  }
+
+  &--qr {
+    --tool: var(--tool-qr);
+    --tool-bg: var(--tool-qr-bg);
+  }
+
+  &--pdf {
+    --tool: var(--tool-pdf);
+    --tool-bg: var(--tool-pdf-bg);
+  }
+
+  @include t.hover {
+    border-color: var(--tool);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:focus-visible {
+    outline-color: var(--tool);
+  }
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-lg);
+    background: var(--tool-bg);
+    color: var(--tool);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    flex: 1;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--tool);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+}
+
+.coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+// Single-row footer (no About/features block on the hub)
+.app-footer--compact {
+  padding-block: var(--space-6);
+
+  .app-footer__bottom {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+}

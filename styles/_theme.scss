@@ -1,0 +1,35 @@
+// =============================================================================
+// Theme wiring. Light is the default; dark applies when the OS prefers dark and
+// the user has not forced light, or when the user forces dark.
+//   <html>                     → follows the OS (prefers-color-scheme)
+//   <html data-theme="light">  → forced light
+//   <html data-theme="dark">   → forced dark
+// The attribute is set before first paint by the inline script in index.html.
+// =============================================================================
+@use 'tokens' as t;
+@use 'accent' as a;
+
+:root {
+  @include t.static-tokens;
+  @include t.light;
+  @include a.light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include t.dark;
+    @include a.dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  @include t.dark;
+  @include a.dark;
+}
+
+// Suppress colour transitions for the frame in which the theme changes.
+:root[data-theme-switching] *,
+:root[data-theme-switching] *::before,
+:root[data-theme-switching] *::after {
+  transition: none !important;
+}

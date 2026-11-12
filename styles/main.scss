@@ -1,0 +1,9 @@
+// Hub stylesheet source. Compiled to ../styles.css (the page has no build step):
+//   npx sass --no-source-map --style=compressed styles/main.scss styles.css
+// _tokens, _theme, _base, _components and _shell are shared with the tool apps;
+// keep them identical across repos (see DESIGN.md).
+@use 'theme';
+@use 'base';
+@use 'components';
+@use 'shell';
+@use 'hub';
