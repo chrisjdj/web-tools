@@ -30,17 +30,12 @@ Generate precise, customizable QR codes in milliseconds. Tailored for URLs, text
 ### [PDF Toolkit](https://chrisjdj.github.io/PDF-Toolkit/)
 Comprehensive PDF management. Merge multiple files, split pages, and rotate documents with instant client-side processing.
 
-<!-- 
-### [Privacy Inspector](https://chrisjdj.github.io/web-tools/browser-privacy-inspector/)
-Discover your browser's full fingerprint — GPU, fonts, canvas hash, WebRTC leaks, and more. 100% client-side.
--->
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/dark-desktop.png" />
   <img alt="Web Tools Collection hub with cards for Turbo Image, QR Generator and PDF Toolkit" src="docs/screenshots/light-desktop.png" width="1280" />
 </picture>
 
-Each tool is its own repository and is deployed to its own GitHub Pages site. The folders `Turbo-Image/`, `QR-Code-Gen/`, `PDF-Toolkit/` and `browser-privacy-inspector/` in this repo are older build copies kept so existing links keep working; the hub links to the standalone sites.
+Each tool is its own repository and is deployed to its own GitHub Pages site. The `Turbo-Image/`, `QR-Code-Gen/` and `PDF-Toolkit/` folders in this repo hold only a redirect page, so old `/web-tools/<tool>/` links (including query strings and hashes) land on the standalone sites.
 
 ---
 
