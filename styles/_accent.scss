@@ -1,0 +1,22 @@
+// Accent — web-tools hub (neutral). Tool cards use each app's own accent.
+@mixin light {
+  --accent: #18181b;
+  --accent-hover: #27272a;
+  --accent-active: #3f3f46;
+  --on-accent: #ffffff;
+  --accent-subtle-bg: #f4f4f5;
+  --accent-subtle-border: #e4e4e7;
+  --accent-subtle-text: #18181b;
+  --focus-ring: #18181b;
+}
+
+@mixin dark {
+  --accent: #fafafa;
+  --accent-hover: #e4e4e7;
+  --accent-active: #d4d4d8;
+  --on-accent: #09090b;
+  --accent-subtle-bg: #1c1c20;
+  --accent-subtle-border: #27272a;
+  --accent-subtle-text: #fafafa;
+  --focus-ring: #fafafa;
+}

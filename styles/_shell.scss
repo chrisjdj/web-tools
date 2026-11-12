@@ -1,0 +1,257 @@
+// =============================================================================
+// App shell: header, theme switch, page container, tool layout, footer. Shared.
+// =============================================================================
+@use 'tokens' as t;
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+// ---- Header -------------------------------------------------------------------
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    height: var(--header-height);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-left: auto;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  color: var(--text);
+  text-decoration: none;
+
+  &__mark {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: var(--text-base);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  &__tagline {
+    display: none;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include t.up(md) {
+      display: block;
+    }
+  }
+}
+
+.privacy-pill {
+  display: none;
+
+  @include t.up(sm) {
+    display: inline-flex;
+  }
+}
+
+.hub-link {
+  @include t.down(sm) {
+    .hub-link__label {
+      display: none;
+    }
+  }
+}
+
+// ---- Theme switch ----------------------------------------------------------------
+// ≥sm: three-way segmented radiogroup. <sm: single button cycling the modes.
+.theme-switch {
+  display: none;
+
+  @include t.up(sm) {
+    display: inline-flex;
+  }
+
+  .segmented__item {
+    padding: 0;
+    width: 32px;
+    min-height: 28px;
+    flex: 0 0 auto;
+  }
+}
+
+.theme-cycle {
+  @include t.up(sm) {
+    display: none;
+  }
+}
+
+// ---- Main + tool layout ---------------------------------------------------------
+.app-main {
+  flex: 1 0 auto;
+  padding-block: var(--space-4) var(--space-10);
+
+  @include t.up(md) {
+    padding-block: var(--space-6) var(--space-12);
+  }
+}
+
+// Mobile: one column. DOM order = workspace first (primary task), then sidebar.
+// Desktop (≥lg): sidebar placed in the left column via the grid, workspace right.
+.tool-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  &__workspace,
+  &__sidebar {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  @include t.up(lg) {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    gap: var(--space-6);
+    align-items: start;
+
+    &__sidebar {
+      grid-column: 1;
+      grid-row: 1;
+      position: sticky;
+      top: calc(var(--header-height) + var(--space-6));
+      max-height: calc(100dvh - var(--header-height) - var(--space-12));
+      overflow-y: auto;
+      // Room for focus rings inside the scroll container
+      padding: 3px;
+      margin: -3px;
+    }
+
+    &__workspace {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+}
+
+// ---- Footer ----------------------------------------------------------------------
+.app-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding-block: var(--space-10) var(--space-8);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+
+  &__grid {
+    display: grid;
+    gap: var(--space-8);
+
+    @include t.up(lg) {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: var(--space-12);
+    }
+  }
+
+  h2 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  h3 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+    color: var(--text);
+  }
+
+  p {
+    max-width: 60ch;
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+
+    @include t.up(sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr;
+      gap: var(--space-1) var(--space-3);
+      align-items: start;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .feature-icon {
+      grid-row: span 2;
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-md);
+      background: var(--accent-subtle-bg);
+      color: var(--accent-subtle-text);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    justify-content: space-between;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border);
+    font-size: var(--text-xs);
+    color: var(--text-subtle);
+
+    a {
+      color: var(--text-muted);
+    }
+  }
+}
