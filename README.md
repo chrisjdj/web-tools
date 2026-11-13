@@ -1,6 +1,6 @@
-# Web Tools Collection
+# Web Tools Collection – Free, Private Browser Tools
 
-A beautifully curated suite of high-performance utilities designed for modern workflows.
+Free online tools that run entirely in your browser: **compress and convert images, generate QR codes, merge, split and compress PDFs, and run full-screen clocks, countdowns and timers**. No sign-up, no ads, and your files are never uploaded.
 
 **[Launch Web Tools Collection](https://chrisjdj.github.io/web-tools/)**
 
@@ -30,12 +30,24 @@ Generate precise, customizable QR codes in milliseconds. Tailored for URLs, text
 ### [PDF Toolkit](https://chrisjdj.github.io/PDF-Toolkit/)
 Comprehensive PDF management. Merge multiple files, split pages, and rotate documents with instant client-side processing.
 
+### [Time-Deck](https://chrisjdj.github.io/Time-Deck/)
+Full-screen clocks and timers for any screen, TV or projector: countdowns, stopwatch with laps, world clocks, meeting planner, presenter and exam timers, pomodoro and alarms. 12h (AM/PM) or 24h time, works offline. [Source and docs](https://github.com/chrisjdj/Time-Deck).
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/dark-desktop.png" />
-  <img alt="Web Tools Collection hub with cards for Turbo Image, QR Generator and PDF Toolkit" src="docs/screenshots/light-desktop.png" width="1280" />
+  <img alt="Web Tools Collection hub with cards for Turbo Image, QR Generator, PDF Toolkit and Time-Deck" src="docs/screenshots/light-desktop.png" width="1280" />
 </picture>
 
-Each tool is its own repository and is deployed to its own GitHub Pages site. The `Turbo-Image/`, `QR-Code-Gen/` and `PDF-Toolkit/` folders in this repo hold only a redirect page, so old `/web-tools/<tool>/` links (including query strings and hashes) land on the standalone sites.
+Turbo Image, QR Generator, PDF Toolkit and Time-Deck each have their own repository and are deployed to their own GitHub Pages site. The `Turbo-Image/`, `QR-Code-Gen/`, `PDF-Toolkit/` and `Time-Deck/` folders in this repo hold only a redirect page, so old `/web-tools/<tool>/` links (including query strings and hashes) land on the standalone sites.
+
+---
+
+## 🔎 Common tasks
+
+- **Compress a photo for the web:** [Turbo Image](https://chrisjdj.github.io/Turbo-Image/) → WebP or AVIF.
+- **Make a Wi-Fi or contact QR code:** [QR Generator](https://chrisjdj.github.io/QR-Code-Gen/).
+- **Merge two PDFs or extract pages:** [PDF Toolkit](https://chrisjdj.github.io/PDF-Toolkit/).
+- **Run a countdown on a projector, time a talk or an exam, or compare world clocks:** [Time-Deck](https://chrisjdj.github.io/Time-Deck/).
 
 ---
 
@@ -48,6 +60,12 @@ npx sass --no-source-map --style=compressed styles/main.scss styles.css
 ```
 
 The theme preference (`theme-preference` in localStorage: `system`, `light` or `dark`) is applied before first paint by the inline script in `index.html`; `theme.js` wires up the switch.
+
+### Search and sharing
+
+- `index.html` carries the title, description, Open Graph/Twitter tags and JSON-LD structured data (a `WebSite` plus an `ItemList` of the tools). Keep the tool list in the JSON-LD in step with the cards.
+- `sitemap.xml` lists the pages served from this repo (the hub). Update `lastmod` when they change, and submit it in Google Search Console: a project site under `github.io/web-tools/` cannot publish its own `robots.txt`, so search engines will not find the sitemap on their own.
+- `og-image.png` (1200×630) is the preview image shown when the hub link is shared.
 
 ---
 

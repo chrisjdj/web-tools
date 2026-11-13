@@ -11,6 +11,8 @@
   --tool-qr-bg: #eef2ff;
   --tool-pdf: #e11d48;
   --tool-pdf-bg: #fff1f2;
+  --tool-time: #b45309;
+  --tool-time-bg: #fffbeb;
 }
 
 @mixin card-accents-dark {
@@ -20,6 +22,8 @@
   --tool-qr-bg: rgb(129 140 248 / 0.14);
   --tool-pdf: #fb7185;
   --tool-pdf-bg: rgb(251 113 133 / 0.12);
+  --tool-time: #fbbf24;
+  --tool-time-bg: rgb(251 191 36 / 0.12);
 }
 
 :root {
@@ -78,8 +82,12 @@
   padding: 0;
 
   @include t.up(md) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-6);
+  }
+
+  @include t.up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -112,6 +120,11 @@
   &--pdf {
     --tool: var(--tool-pdf);
     --tool-bg: var(--tool-pdf-bg);
+  }
+
+  &--time {
+    --tool: var(--tool-time);
+    --tool-bg: var(--tool-time-bg);
   }
 
   @include t.hover {
